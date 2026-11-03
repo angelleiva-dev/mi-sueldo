@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mi Sueldo</title>
+  <meta name="description" content="Control de sueldo, ingresos, gastos, presupuesto y metas de ahorro. Datos guardados en tu dispositivo.">
+  <meta name="theme-color" content="#0f766e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Mi Sueldo">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="period">
+      <button class="icon-btn" id="prevPeriod" aria-label="Periodo anterior">‹</button>
+      <div class="period-label">
+        <span id="periodLabel">—</span>
+        <small id="periodSub"></small>
+      </div>
+      <button class="icon-btn" id="nextPeriod" aria-label="Periodo siguiente">›</button>
+    </div>
+  </header>
+
+  <main id="view"></main>
+
+  <button class="fab" id="fab" aria-label="Registrar movimiento">+</button>
+
+  <nav class="tabbar">
+    <button data-tab="inicio" class="active"><span>🏠</span>Inicio</button>
+    <button data-tab="movimientos"><span>📋</span>Movimientos</button>
+    <button data-tab="presupuesto"><span>🎯</span>Presupuesto</button>
+    <button data-tab="metas"><span>🐷</span>Metas</button>
+    <button data-tab="ajustes"><span>⚙️</span>Ajustes</button>
+  </nav>
+
+  <div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+  <section class="sheet" id="sheet" hidden aria-modal="true" role="dialog"></section>
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
